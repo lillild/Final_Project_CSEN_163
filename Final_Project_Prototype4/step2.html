@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeftoverChef · Cooking Tools</title>
+
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="style/swiper-bundle.min.css">
+
+  <!-- Your slider CSS -->
+  <link rel="stylesheet" href="style/step2.css">
+</head>
+<body>
+    <header class="tools-header">
+      <p class="step-count">1 of 2 steps</p>
+      <h1 class="tools-title">Turn on if you have it!</h1>
+   
+        <div class="next-step-wrapper">
+            <button class="next-step-btn" onclick="window.location.href='recipe.html'">
+                Generate Recipes
+            </button>
+        </div>
+
+    </header>
+
+  <div class="slide-container swiper">
+    <div class="slide-content">
+      <div class="card-wrapper swiper-wrapper">
+
+        <!-- Tool 1: Oven -->
+        <div class="card swiper-slide">
+          <div class="image-content">
+            <span class="overlay" id="overlay-1"></span>
+            <div class="card-image">
+              <img src="images/oven.png" alt="Oven" class="card-img">
+            </div>
+          </div>
+
+          <div class="card-content">
+            <h2 class="name">Oven</h2>
+            <p class="description">
+              Perfect for sheet-pan dinners, casseroles, and baked veggies.
+              Turn this on if you have access to a working oven.
+            </p>
+            <label class="switch">
+                <input type="checkbox" class="switch-input" data-tool="oven">
+                <span class="switch-track"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Tool 2: Stovetop & Frying Pan -->
+        <div class="card swiper-slide">
+          <div class="image-content">
+            <span class="overlay" id="overlay-2"></span>
+            <div class="card-image">
+              <img src="images/pan.png" alt="Stovetop pan" class="card-img">
+            </div>
+          </div>
+
+          <div class="card-content">
+            <h2 class="name">Stovetop & Pan</h2>
+            <p class="description">
+              Great for stir-fries, quick sautés, and one-pan leftover meals.
+              Turn this on if you can cook on the stove.
+            </p>
+            <label class="switch">
+                <input type="checkbox" class="switch-input" data-tool="oven">
+                <span class="switch-track"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Tool 3: Microwave -->
+        <div class="card swiper-slide">
+          <div class="image-content">
+            <span class="overlay" id="overlay-3"></span>
+            <div class="card-image">
+              <img src="images/microwave.png" alt="Microwave" class="card-img">
+            </div>
+          </div>
+
+          <div class="card-content">
+            <h2 class="name">Microwave</h2>
+            <p class="description">
+              For dorm-friendly recipes, reheats, and quick mug meals.
+              Turn this on if you have a microwave.
+            </p>
+           <label class="switch">
+                <input type="checkbox" class="switch-input" data-tool="oven">
+                <span class="switch-track"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Tool 4: Air Fryer -->
+        <div class="card swiper-slide">
+          <div class="image-content">
+            <span class="overlay" id="overlay-4"></span>
+            <div class="card-image">
+              <img src="images/airfry.png" alt="Air fryer" class="card-img">
+            </div>
+          </div>
+
+          <div class="card-content">
+            <h2 class="name">Air Fryer</h2>
+            <p class="description">
+              Crispy leftovers with less oil — fries, veggies, and more.
+              Turn this on if you own an air fryer.
+            </p>
+            <label class="switch">
+                <input type="checkbox" class="switch-input" data-tool="oven">
+                <span class="switch-track"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Tool 5: Rice Cooker -->
+        <div class="card swiper-slide">
+          <div class="image-content">
+            <span class="overlay" id="overlay-5"></span>
+            <div class="card-image">
+              <img src="images/ricecooker.png" alt="Rice cooker" class="card-img">
+            </div>
+          </div>
+
+          <div class="card-content">
+            <h2 class="name">Rice Cooker</h2>
+            <p class="description">
+              Not just for rice — great for one-pot soups and steamed dishes.
+              Turn this on if you have a rice cooker.
+            </p>
+            <label class="switch">
+                <input type="checkbox" class="switch-input" data-tool="oven">
+                <span class="switch-track"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Tool 6: No-Cook / Prep Only -->
+        <div class="card swiper-slide">
+          <div class="image-content">
+            <span class="overlay" id="overlay-6"></span>
+            <div class="card-image">
+              <img src="images/preponly.png" alt="No-cook prep" class="card-img">
+            </div>
+          </div>
+
+          <div class="card-content">
+            <h2 class="name">No-Cook / Prep Only</h2>
+            <p class="description">
+              For salads, sandwiches, and snacks that use no heat at all.
+              Turn this on if you only have a knife and fridge.
+            </p>
+           <label class="switch">
+                <input type="checkbox" class="switch-input" data-tool="oven">
+                <span class="switch-track"></span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="swiper-button-next swiper-navBtn"></div>
+    <div class="swiper-button-prev swiper-navBtn"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+
+  <!-- Swiper JS -->
+  <script src="dist/swiper-bundle.min.js"></script>
+
+  <!-- Your JS -->
+  <script src="dist/step2.js"></script>
+</body>
+</html>
