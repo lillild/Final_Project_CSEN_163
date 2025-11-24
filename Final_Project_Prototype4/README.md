@@ -17,7 +17,7 @@ Login -> Landing -> (first time cooking)Step1[add ingredients] -> Step2[toggle f
 
 MISSING PARTS:
 1. Step1
-2. Step3
+2. Recipe generated page (after step2)
 3. Recipe page from home
 4. Impact page from home
 5. Help page from home
