@@ -186,60 +186,146 @@ background-color: #6d1a36;
   color: #666;
 }
 
-/* ---- iOS STYLE TOGGLE ---- */
+/* ---------- FANCY ANIMATED TOGGLE (Totoro-style) ---------- */
 
-.switch {
+.fancy-toggle {
   position: relative;
   display: inline-block;
-  width: 50px;
-  height: 28px;
+  width: 90px;          /* overall width of pill */
+  height: 48px;         /* height of pill */
   cursor: pointer;
-}
-
-/* hide original checkbox */
-.switch-input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* track background */
-.switch-track {
-  position: absolute;
-  inset: 0;
-  background-color: #e6e6e6;          /* light gray OFF */
-  border-radius: 999px;
-  transition: background-color .25s ease;
-  box-shadow: inset 0 0 3px rgba(0,0,0,0.22);
-}
-
-/* the white circle knob */
-.switch-track::before {
-  content: "";
-  position: absolute;
-  height: 22px;
-  width: 22px;
-  left: 3px;
-  top: 3px;
-  background-color: white;
-  border-radius: 50%;
-  transition: transform .25s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.28);
-}
-
-/* ON STATE */
-.switch-input:checked + .switch-track {
-  background-color: #6d1a36;          /* your red theme color */
-}
-
-.switch-input:checked + .switch-track::before {
-  transform: translateX(22px);
-}
-
-.switch {
-  margin-top: 30px;   /* adds space between text and toggle */
+  margin-top: 30px;
   margin-bottom: 25px;
 }
+
+/* hide the real checkbox */
+.fancy-toggle__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* pill background */
+.fancy-toggle__track {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #f1eaf0;
+  border-radius: 999px;
+  box-shadow:
+    0 0 0 3px #ffffff,
+    0 0 0 4px rgba(0, 0, 0, 0.05),
+    0 8px 18px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* the “burst” behind the thumb when toggled on */
+.fancy-toggle__burst {
+  position: absolute;
+  inset: 0;
+  background:
+    conic-gradient(
+      from 0deg,
+      #f7b7a3 0deg 30deg,
+      transparent 30deg 60deg,
+      #ffe9d6 60deg 90deg,
+      transparent 90deg 120deg,
+      #f5cebc 120deg 150deg,
+      transparent 150deg 180deg,
+      #f7b7a3 180deg 210deg,
+      transparent 210deg 240deg,
+      #ffe9d6 240deg 270deg,
+      transparent 270deg 300deg,
+      #f5cebc 300deg 330deg,
+      transparent 330deg 360deg
+    );
+  opacity: 0;
+  transform: scale(0.2);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+/* the circular thumb that slides */
+.fancy-toggle__thumb {
+  position: absolute;
+  top: 4px;
+  left: 4px; /* OFF position */
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.18),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  transform: translateX(0);
+}
+
+/* icon inside the toggle thumb */
+.fancy-toggle__icon {
+  width: 70%;
+  height: 70%;
+  background-image: url("../images/togglelogo.png");  /* UPDATE PATH */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+}
+
+.fancy-toggle__icon {
+  width: 200%;   /* bigger */
+  height: 200%;
+}
+
+/* ON STATE  ------------------------------------------------ */
+
+.fancy-toggle__input:checked + .fancy-toggle__track {
+  background: radial-gradient(circle at center, #97546a, #6d1a36);
+  box-shadow:
+    0 0 0 3px #6d1a36,
+    0 0 0 4px rgba(109, 26, 54, 0.15),
+    0 10px 25px rgba(109, 26, 54, 0.35);
+}
+
+/* move thumb to the right */
+.fancy-toggle__input:checked + .fancy-toggle__track .fancy-toggle__thumb {
+  transform: translateX(42px); /* roughly track width - thumb width - margins */
+  box-shadow:
+    0 6px 14px rgba(109, 26, 54, 0.35),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.08);
+}
+
+
+
+/* keyframes ------------------------------------------------ */
+
+@keyframes fancyBurst {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.4;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes fancyNod {
+  0%   { transform: rotate(0deg); }
+  35%  { transform: rotate(-10deg); }
+  70%  { transform: rotate(6deg); }
+  100% { transform: rotate(0deg); }
+}
+
 
 
 /* ----- NEXT STEP BUTTON UNDER HEADER ----- */
