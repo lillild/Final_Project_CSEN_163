@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
+
+:root {
+    --burgundy: #6d1a36;
+    --peach: #f7b7a3;
+    --cream: #ffe9d6;
+    --light-cream: #f1eaf0;
+    --text-dark: #333;
+}
+
+.site-header {
+    padding: 0 2rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.nav-wrapper {
+    max-width: 1300px;
+    margin: 1.5rem auto;
+    background: #ffffff;
+    border-radius: 25px;
+    border: 3px solid var(--peach);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    height: 95px;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+}
+
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.brand-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--burgundy);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    font-size: 1.25rem;
+    font-weight: 600;
+
+    color: var(--text-dark);
+    opacity: 0.85;
+
+    text-decoration: none;
+    padding: 0.5rem 0;
+}
+
+.nav-item img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.nav-item:hover {
+    opacity: 1;
+}
+
+.nav-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    width: 0;
+    height: 3px;
+    background: var(--burgundy);
+    border-radius: 999px;
+    transition: width 0.2s ease;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+    width: 100%;
+}
+
+.nav-item.active {
+    color: var(--burgundy);
+    opacity: 1;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: var(--burgundy);
+    border-radius: 999px;
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .nav-wrapper {
+        height: auto;
+        flex-direction: column;
+        padding: 1.25rem;
+    }
+
+    .main-nav {
+        position: static;
+        flex-direction: column;
+        width: 100%;
+        background: var(--cream);
+        border-radius: 18px;
+        padding: 1rem;
+        display: none;
+    }
+
+    .nav-wrapper.nav-open .main-nav {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+        flex-direction: column;
+    }
+}
