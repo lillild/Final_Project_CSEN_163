@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeftoverChef | Account</title>
+
+    <link rel="stylesheet" href="style/nav.css" />
+    <link rel="stylesheet" href="style/account.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="nav-wrapper">
+            <a href="home.html" class="brand">
+                <img src="images/logo_no_text.png" alt="LeftoverChef logo" class="brand-logo" />
+                <span class="brand-name">LeftoverChef</span>
+            </a>
+
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="main-nav">
+                <a href="home.html" class="nav-item">
+                    <img src="images/home_icon.png" alt="" />
+                    <span>Home</span>
+                </a>
+                <a href="Recipe.html" class="nav-item">
+                    <img src="images/recipes.png" alt="" />
+                    <span>Recipes</span>
+                </a>
+                <a href="impact.html" class="nav-item">
+                    <img src="images/impact_score.png" alt="" />
+                    <span>Impact Score</span>
+                </a>
+                <a href="help.html" class="nav-item">
+                    <img src="images/help.png" alt="" />
+                    <span>Help</span>
+                </a>
+                <a href="account.html" class="nav-item active">
+                    <img src="images/account.png" alt="" />
+                    <span>Account</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- Account layout -->
+    <main class="account-layout">
+        <!-- Left sidebar -->
+        <aside class="account-sidebar">
+            <section class="account-greeting">
+                <h2>Hi, John</h2>
+                <p>Thanks for cooking with LeftoverChef!</p>
+            </section>
+
+            <nav class="account-nav">
+                <p class="account-nav-label">Overview</p>
+                <p class="account-nav-link is-active">Account summary</p>
+
+                <p class="account-nav-label">My profile</p>
+                <p class="account-nav-link">Account info</p>
+                <p class="account-nav-link">Recipes made</p>
+            </nav>
+
+            <button class="signout-btn">Sign out</button>
+        </aside>
+
+        <!-- Main content -->
+        <section class="account-main">
+            <header class="account-main-header">
+                <h1>Welcome to your account</h1>
+                <p>See your profile, recipes you’ve cooked, and your food-waste impact.</p>
+            </header>
+
+            <!-- Impact score card -->
+            <section class="account-card impact-card">
+                <div class="card-header">
+                    <h2>Impact score</h2>
+                    <span class="impact-tag">This month</span>
+                </div>
+                <div class="impact-body">
+                    <div class="impact-number">82</div>
+                    <div class="impact-text">
+                        <p>You’ve saved <strong>6 meals</strong> from going to waste.</p>
+                        <p>Keep cooking to raise your impact score!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Account info card -->
+            <section class="account-card">
+                <div class="card-header">
+                    <h2>Account information</h2>
+                </div>
+
+                <div class="info-grid">
+                    <div class="field-row">
+                        <div>
+                            <p class="label">Full Name</p>
+                            <p class="value">John Doe</p>
+                        </div>
+                        <button class="field-action">Change</button>
+                    </div>
+
+                    <div class="field-row">
+                        <div>
+                            <p class="label">Email Address</p>
+                            <p class="value">johndoe@example.com</p>
+                        </div>
+                        <button class="field-action">Change</button>
+                    </div>
+
+                    <div class="field-row">
+                        <div>
+                            <p class="label">Phone Number</p>
+                            <p class="value">(123)-456-7890</p>
+                        </div>
+                        <button class="field-action">Change</button>
+                    </div>
+
+                    <div class="field-row">
+                        <div>
+                            <p class="label">Primary Location</p>
+                            <p class="value">Santa Clara, CA</p>
+                        </div>
+                        <button class="field-action">Change</button>
+                    </div>
+
+                    <div class="field-row">
+                        <div>
+                            <p class="label">Password</p>
+                            <p class="value">••••••••••</p>
+                        </div>
+                        <button class="field-action">Change password</button>
+                    </div>
+
+                    <div class="field-row">
+                        <div>
+                            <p class="label">Account Created</p>
+                            <p class="value">March 12, 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Recipes made card -->
+            <section class="account-card" id="recipes-made">
+                <div class="card-header">
+                    <h2>Recipes made</h2>
+                    <span class="subtext">Based on your leftover sessions</span>
+                    <a href="Recipe.html" class="card-action">+</a>
+                </div>
+                <ul class="recipes-list">
+                    <li>
+                        <span class="recipe-name">Crispy Veggie Fried Rice</span>
+                        <span class="recipe-meta">2 times • 3 leftovers used</span>
+                    </li>
+                    <li>
+                        <span class="recipe-name">Cheesy Sheet-Pan Nachos</span>
+                        <span class="recipe-meta">1 time • 4 leftovers used</span>
+                    </li>
+                    <li>
+                        <span class="recipe-name">Roasted Veggie Pasta Bake</span>
+                        <span class="recipe-meta">1 time • 3 leftovers used</span>
+                    </li>
+                    <li>
+                        <span class="recipe-name">No-Bake Yogurt Parfait Jars</span>
+                        <span class="recipe-meta">3 times • 2 leftovers used</span>
+                    </li>
+                </ul>
+            </section>
+        </section>
+    </main>
+
+    <script src="dist/nav.js"></script>
+</body>
+
+</html>

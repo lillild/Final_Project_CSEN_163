@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style/home.css" />
-    <title>LeftoverChef | Responsive Navigation Bar</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="nav__logo"><a href="#">LeftoverChef</a></div>
-        <ul class="nav__links">
-          <li class="link">Home</li>
-          <li class="link">Recipes</li>
-          <li class="link">Impact Score</li>
-          <li class="link">Help</li>
-          <li class="link">My Account</li>
-        </ul>
-        <div class="toggle__btn">
-          <i class="ri-menu-line"></i>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style/nav.css" />
+  <link rel="stylesheet" href="style/home.css" />
+  <title>LeftoverChef | Responsive Navigation Bar</title>
+</head>
+
+<body>
+    <header class="site-header">
+      <div class="nav-wrapper">
+        <a href="home.html" class="brand">
+          <img src="images/logo_no_text.png" alt="LeftoverChef logo" class="brand-logo" />
+          <span class="brand-name">LeftoverChef</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="main-nav">
+          <a href="home.html" class="nav-item active">
+            <img src="images/home_icon.png" alt="" />
+            <span>Home</span>
+          </a>
+          <a href="Recipe.html" class="nav-item">
+            <img src="images/recipes.png" alt="" />
+            <span>Recipes</span>
+          </a>
+          <a href="impact.html" class="nav-item">
+            <img src="images/impact_score.png" alt="" />
+            <span>Impact Score</span>
+          </a>
+          <a href="help.html" class="nav-item">
+            <img src="images/help.png" alt="" />
+            <span>Help</span>
+          </a>
+          <a href="account.html" class="nav-item">
+            <img src="images/account.png" alt="" />
+            <span>Account</span>
+          </a>
         </div>
-      </nav>
+      </div>
       <div class="hero">
         <h2>ENJOY THE</h2>
-        <p>                 </p>
+        <p> </p>
         <h1>FOOD</h1>
-        <button>Cook Now</button>
+        <a href="step1.html">
+          <button>Cook Now</button>
+        </a>
       </div>
     </header>
+</body>
+<script src="dist/nav.js"></script>
 
-    <script>
-      const toggleBtn = document.querySelector(".toggle__btn");
-      const toggleBtnIcon = document.querySelector(".toggle__btn i");
-      const menu = document.querySelector(".nav__links");
-
-      toggleBtn.onclick = function () {
-        menu.classList.toggle("open");
-        const isOpen = menu.classList.contains("open");
-
-        toggleBtnIcon.classList = isOpen ? "ri-close-line" : "ri-menu-line";
-      };
-    </script>
-  </body>
 </html>
