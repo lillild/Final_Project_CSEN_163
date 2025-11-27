@@ -7,9 +7,9 @@
     font-family: 'Montserrat', sans-serif;
 }
 .icon {
-    width: 26px;   /* controls size */
-    height: 26px;  /* controls size */
-    object-fit: contain; /* prevents distortion */
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
   }
   
 

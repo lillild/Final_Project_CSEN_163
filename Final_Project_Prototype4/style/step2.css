@@ -15,9 +15,9 @@ body{
   background: linear-gradient(to right, #f5cebc, #f1eaf0);
 }
 .icon {
-  width: 26px;   /* controls size */
-  height: 26px;  /* controls size */
-  object-fit: contain; /* prevents distortion */
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
 }
 
 .slide-container{
@@ -177,7 +177,7 @@ background-color: #6d1a36;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto 2rem auto;
-  padding-left: 40px;  /* adjust this */
+  padding-left: 40px;
 }
 
 .tools-title {
@@ -192,26 +192,23 @@ background-color: #6d1a36;
   color: #666;
 }
 
-/* ---------- FANCY ANIMATED TOGGLE (Totoro-style) ---------- */
-
 .fancy-toggle {
   position: relative;
   display: inline-block;
-  width: 90px;          /* overall width of pill */
-  height: 48px;         /* height of pill */
+  width: 90px;
+  height: 48px;
   cursor: pointer;
   margin-top: 30px;
   margin-bottom: 25px;
 }
 
-/* hide the real checkbox */
 .fancy-toggle__input {
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
 
-/* pill background */
+
 .fancy-toggle__track {
   position: relative;
   display: block;
@@ -227,7 +224,6 @@ background-color: #6d1a36;
   transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* the “burst” behind the thumb when toggled on */
 .fancy-toggle__burst {
   position: absolute;
   inset: 0;
@@ -253,11 +249,10 @@ background-color: #6d1a36;
   pointer-events: none;
 }
 
-/* the circular thumb that slides */
 .fancy-toggle__thumb {
   position: absolute;
   top: 4px;
-  left: 4px; /* OFF position */
+  left: 4px;
   width: 40px;
   height: 40px;
   background: #ffffff;
@@ -272,11 +267,11 @@ background-color: #6d1a36;
   transform: translateX(0);
 }
 
-/* icon inside the toggle thumb */
+
 .fancy-toggle__icon {
   width: 70%;
   height: 70%;
-  background-image: url("../images/togglelogo.png");  /* UPDATE PATH */
+  background-image: url("../images/togglelogo.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -284,11 +279,9 @@ background-color: #6d1a36;
 }
 
 .fancy-toggle__icon {
-  width: 200%;   /* bigger */
+  width: 200%;
   height: 200%;
 }
-
-/* ON STATE  ------------------------------------------------ */
 
 .fancy-toggle__input:checked + .fancy-toggle__track {
   background: radial-gradient(circle at center, #97546a, #6d1a36);
@@ -298,17 +291,12 @@ background-color: #6d1a36;
     0 10px 25px rgba(109, 26, 54, 0.35);
 }
 
-/* move thumb to the right */
 .fancy-toggle__input:checked + .fancy-toggle__track .fancy-toggle__thumb {
-  transform: translateX(42px); /* roughly track width - thumb width - margins */
+  transform: translateX(42px);
   box-shadow:
     0 6px 14px rgba(109, 26, 54, 0.35),
     inset 0 -2px 3px rgba(0, 0, 0, 0.08);
 }
-
-
-
-/* keyframes ------------------------------------------------ */
 
 @keyframes fancyBurst {
   0% {
@@ -333,40 +321,35 @@ background-color: #6d1a36;
 }
 
 
-
-/* ----- NEXT STEP BUTTON UNDER HEADER ----- */
-
 .next-step-wrapper {
   display: flex;
-  justify-content: flex-start;   /* left aligned under header */
+  justify-content: flex-start;
   margin-top: 20px;
   margin-bottom: 40px;
-  padding-left: 0px;            /* matches your header padding */
+  padding-left: 0px;
 }
 
-/* The button itself */
 .next-step-btn {
-  background-color: #6d1a36;     /* deep berry red */
-  color: #ffe9d6;                /* soft cream text */
-  font-size: 1.6rem;             /* bigger text */
-  padding: 16px 48px;            /* nice large button */
+  background-color: #6d1a36; 
+  color: #ffe9d6; 
+  font-size: 1.6rem; 
+  padding: 16px 48px; 
   border: none;
-  border-radius: 16px;           /* soft rounded corners */
+  border-radius: 16px;      
   cursor: pointer;
   font-weight: 600;
   letter-spacing: 0.3px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);  /* soft shadow */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
   transition: all 0.25s ease;
 }
 
-/* Hover state */
+
 .next-step-btn:hover {
-  background-color: #581126;      /* darker berry */
-  transform: translateY(-3px);     /* lift up slightly */
+  background-color: #581126;  
+  transform: translateY(-3px);   
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
 }
 
-/* Pressed state */
 .next-step-btn:active {
   transform: translateY(-1px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
