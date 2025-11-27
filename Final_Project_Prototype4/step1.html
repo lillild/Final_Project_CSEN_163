@@ -1,353 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LeftoverChef – Recipes</title>
 
-    <!-- Step 1 / Recipes styles -->
-    <link rel="stylesheet" href="style/step1.css" />
-    <link rel="stylesheet" href="style/nav.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LeftoverChef – Recipes</title>
 
-  <body>
-    <!-- NAVBAR -->
-    <header class="site-header">
-      <div class="nav-wrapper">
-        <a href="home.html" class="brand">
-          <img
-            src="images/logo_no_text.png"
-            alt="LeftoverChef logo"
-            class="brand-logo"
-          />
-          <span class="brand-name">LeftoverChef</span>
+  <!-- Step 1 / Recipes styles -->
+  <link rel="stylesheet" href="style/step1.css" />
+  <link rel="stylesheet" href="style/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style/step2.css" />
+  <link rel="stylesheet" href="style/nav.css" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="nav-wrapper">
+      <a href="home.html" class="brand">
+        <img src="images/logo_no_text.png" alt="LeftoverChef logo" class="brand-logo" />
+        <span class="brand-name">LeftoverChef</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="main-nav">
+        <a href="home.html" class="nav-item">
+          <img src="images/home_icon.png" alt="" />
+          <span>Home</span>
         </a>
 
-        <button class="nav-toggle" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <!-- Recipes is active on this page -->
+        <a href="step1.html" class="nav-item active">
+          <img src="images/recipes.png" alt="" class="icon recipes-icon" />
+          <span>Recipes</span>
+        </a>
 
-        <div class="main-nav">
-          <a href="home.html" class="nav-item">
-            <img src="images/home_icon.png" alt="" />
-            <span>Home</span>
-          </a>
+        <a href="impact.html" class="nav-item">
+          <img src="images/impact_score.png" alt="" />
+          <span>Impact Score</span>
+        </a>
 
-          <!-- Recipes is active on this page -->
-          <a href="step1.html" class="nav-item active">
-            <img src="images/recipes.png" alt="" class="icon recipes-icon" />
-            <span>Recipes</span>
-          </a>
+        <a href="help.html" class="nav-item">
+          <img src="images/help.png" alt="" />
+          <span>Help</span>
+        </a>
 
-          <a href="impact.html" class="nav-item">
-            <img src="images/impact_score.png" alt="" />
-            <span>Impact Score</span>
-          </a>
-
-          <a href="help.html" class="nav-item">
-            <img src="images/help.png" alt="" />
-            <span>Help</span>
-          </a>
-
-          <a href="account.html" class="nav-item">
-            <img src="images/account.png" alt="" />
-            <span>Account</span>
-          </a>
-        </div>
+        <a href="account.html" class="nav-item">
+          <img src="images/account.png" alt="" />
+          <span>Account</span>
+        </a>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- MAIN CONTENT -->
-    <main class="page recipe-page" role="main">
-      <!-- STEP 1 CARD (two-column layout) -->
-      <section
-        class="card hero-card"
-        aria-label="Add ingredients to get recipes"
-      >
-        <!-- Left side text -->
-        <div class="hero-left">
-          <h2>Start with what you already have</h2>
-          <p>
-            Type in your leftover ingredients and pantry items. LeftoverChef
-            suggests quick recipes so you waste less food and save more money.
-          </p>
-          <ul class="hero-highlights">
-            <li>✔ AI ideas from your real fridge</li>
-            <li>✔ Filters for time, diet, and equipment</li>
-            <li>✔ Points for every leftover you save</li>
-          </ul>
-        </div>
+  <!-- MAIN CONTENT -->
+  <main class="page recipe-page" role="main">
 
-        <!-- Right side: Step 1 UI -->
-        <div class="hero-right">
-          <p class="step-label">Step 1 · Add ingredients</p>
+    <div class="slide-container swiper">
+      <div class="slide-content">
+        <div class="card-wrapper swiper-wrapper">
 
-          <form
-            id="ing-form"
-            class="ing-form"
-            aria-describedby="ing-help ing-error"
-          >
-            <label for="ing-input" class="sr-only">Ingredient</label>
-<br>
-            <input
-              id="ing-input"
-              name="ingredient"
-              type="text"
-              autocomplete="off"
-              placeholder="e.g., chicken, rice, spinach"
-              aria-label="Ingredient input"
-            />
-
-            <div class="ing-buttons">
-              <button type="submit" id="add-btn" class="btn primary">
-                Add ingredient
-              </button>
-              <button type="button" id="clear-btn" class="btn ghost">
-                Clear all
-              </button>
+          <!-- Tool 1: Oven -->
+          <div class="tool-card swiper-slide">
+            <div class="image-content">
+              <span class="overlay" id="overlay-1"></span>
+              <div class="card-image">
+                <img src="images/oven.png" alt="Oven" class="card-img">
+              </div>
             </div>
 
-            <p id="ing-help" class="help">
-              Paste a list like <em>“onion, eggs, spinach”</em> or press
-              <kbd>/</kbd> to jump here.
-            </p>
+            <div class="card-content">
+              <h2 class="name">Oven</h2>
+              <p class="description">
+                Perfect for sheet-pan dinners, casseroles, and baked veggies.
+                Turn this on if you have access to a working oven.
+              </p>
+              <label class="fancy-toggle">
+                <input type="checkbox" class="fancy-toggle__input" data-tool="oven">
+                <span class="fancy-toggle__track">
+                  <span class="fancy-toggle__burst"></span>
+                  <span class="fancy-toggle__thumb">
+                    <span class="fancy-toggle__icon"></span>
+                  </span>
+                </span>
+              </label>
+            </div>
+          </div>
 
-            <!-- Bold black error line -->
-            <p id="ing-error" class="error" aria-live="polite"></p>
-          </form>
+          <!-- Tool 2: Stovetop & Frying Pan -->
+          <div class="tool-card swiper-slide">
+            <div class="image-content">
+              <span class="overlay" id="overlay-2"></span>
+              <div class="card-image">
+                <img src="images/pan.png" alt="Stovetop pan" class="card-img">
+              </div>
+            </div>
 
-          <!-- Chips -->
-          <ul
-            id="pantry-list"
-            class="chips"
-            aria-live="polite"
-            aria-label="Current pantry list"
-          ></ul>
+            <div class="card-content">
+              <h2 class="name">Stovetop & Pan</h2>
+              <p class="description">
+                Great for stir-fries, quick sautés, and one-pan leftover meals.
+                Turn this on if you can cook on the stove.
+              </p>
+              <label class="fancy-toggle">
+                <input type="checkbox" class="fancy-toggle__input" data-tool="oven">
+                <span class="fancy-toggle__track">
+                  <span class="fancy-toggle__burst"></span>
+                  <span class="fancy-toggle__thumb">
+                    <span class="fancy-toggle__icon"></span>
+                  </span>
+                </span>
+              </label>
+            </div>
+          </div>
 
-          <p class="help help-secondary" id="sample-note">
-            We preloaded a few sample ingredients so you can see how
-            LeftoverChef works and you can clear or replace them any time.
-          </p>
+
+          <!-- Tool 3: Microwave -->
+          <div class="tool-card swiper-slide">
+            <div class="image-content">
+              <span class="overlay" id="overlay-3"></span>
+              <div class="card-image">
+                <img src="images/microwave.png" alt="Microwave" class="card-img">
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">Microwave</h2>
+              <p class="description">
+                For dorm-friendly recipes, reheats, and quick mug meals.
+                Turn this on if you have a microwave.
+              </p>
+              <label class="fancy-toggle">
+                <input type="checkbox" class="fancy-toggle__input" data-tool="oven">
+                <span class="fancy-toggle__track">
+                  <span class="fancy-toggle__burst"></span>
+                  <span class="fancy-toggle__thumb">
+                    <span class="fancy-toggle__icon"></span>
+                  </span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Tool 4: Air Fryer -->
+          <div class="tool-card swiper-slide">
+            <div class="image-content">
+              <span class="overlay" id="overlay-4"></span>
+              <div class="card-image">
+                <img src="images/airfry.png" alt="Air fryer" class="card-img">
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">Air Fryer</h2>
+              <p class="description">
+                Crispy leftovers with less oil — fries, veggies, and more.
+                Turn this on if you own an air fryer.
+              </p>
+              <label class="fancy-toggle">
+                <input type="checkbox" class="fancy-toggle__input" data-tool="oven">
+                <span class="fancy-toggle__track">
+                  <span class="fancy-toggle__burst"></span>
+                  <span class="fancy-toggle__thumb">
+                    <span class="fancy-toggle__icon"></span>
+                  </span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Tool 5: Rice Cooker -->
+          <div class="tool-card swiper-slide">
+            <div class="image-content">
+              <span class="overlay" id="overlay-5"></span>
+              <div class="card-image">
+                <img src="images/ricecooker.png" alt="Rice cooker" class="card-img">
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">Rice Cooker</h2>
+              <p class="description">
+                Not just for rice — great for one-pot soups and steamed dishes.
+                Turn this on if you have a rice cooker.
+              </p>
+              <label class="fancy-toggle">
+                <input type="checkbox" class="fancy-toggle__input" data-tool="oven">
+                <span class="fancy-toggle__track">
+                  <span class="fancy-toggle__burst"></span>
+                  <span class="fancy-toggle__thumb">
+                    <span class="fancy-toggle__icon"></span>
+                  </span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Tool 6: No-Cook / Prep Only -->
+          <div class="tool-card swiper-slide">
+            <div class="image-content">
+              <span class="overlay" id="overlay-6"></span>
+              <div class="card-image">
+                <img src="images/preponly.png" alt="No-cook prep" class="card-img">
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">No-Cook / Prep Only</h2>
+              <p class="description">
+                For salads, sandwiches, and snacks that use no heat at all.
+                Turn this on if you only have a knife and fridge.
+              </p>
+              <label class="fancy-toggle">
+                <input type="checkbox" class="fancy-toggle__input" data-tool="oven">
+                <span class="fancy-toggle__track">
+                  <span class="fancy-toggle__burst"></span>
+                  <span class="fancy-toggle__thumb">
+                    <span class="fancy-toggle__icon"></span>
+                  </span>
+                </span>
+              </label>
+            </div>
+          </div>
+
         </div>
-      </section>
+      </div>
 
-      <!-- STEP 3 · FULL-WIDTH CARD UNDER STEP 1 -->
-      <section class="card step3-card" id="step3">
-        <div class="step3-header">
-          <p class="step-label">Step 3 · Get AI recipes</p>
-          <h2>Recipe suggestions</h2>
-          <p class="step3-subtitle">
-            We highlight recipes that use the most of what you already have.
+      <div class="swiper-button-next swiper-navBtn"></div>
+      <div class="swiper-button-prev swiper-navBtn"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <!-- STEP 1 CARD (two-column layout) -->
+    <section class="card hero-card" aria-label="Add ingredients to get recipes">
+      <!-- Left side text -->
+      <div class="hero-left">
+        <h2>Start with what you already have</h2>
+        <p>
+          Type in your leftover ingredients and pantry items. LeftoverChef
+          suggests quick recipes so you waste less food and save more money.
+        </p>
+        <ul class="hero-highlights">
+          <li>✔ AI ideas from your real fridge</li>
+          <li>✔ Filters for time, diet, and equipment</li>
+          <li>✔ Points for every leftover you save</li>
+        </ul>
+      </div>
+
+      <!-- Right side: Step 1 UI -->
+      <div class="hero-right">
+        <p class="step-label">Step 1 · Add ingredients</p>
+
+        <form id="ing-form" class="ing-form" aria-describedby="ing-help ing-error">
+          <label for="ing-input" class="sr-only">Ingredient</label>
+          <br>
+          <input id="ing-input" name="ingredient" type="text" autocomplete="off"
+            placeholder="e.g., chicken, rice, spinach" aria-label="Ingredient input" />
+
+          <div class="ing-buttons">
+            <button type="submit" id="add-btn" class="btn primary">
+              Add ingredient
+            </button>
+            <button type="button" id="clear-btn" class="btn ghost">
+              Clear all
+            </button>
+          </div>
+
+          <p id="ing-help" class="help">
+            Paste a list like <em>“onion, eggs, spinach”</em> or press
+            <kbd>/</kbd> to jump here.
           </p>
 
-          <button type="button" class="btn primary" id="suggest-btn">
-            Suggest recipes
-          </button>
+          <!-- Bold black error line -->
+          <p id="ing-error" class="error" aria-live="polite"></p>
+        </form>
 
-          <p class="help" id="recipe-results-help">
-            When you’re ready, click <strong>Suggest recipes</strong> to see
-            ideas.
-          </p>
-        </div>
+        <!-- Chips -->
+        <ul id="pantry-list" class="chips" aria-live="polite" aria-label="Current pantry list"></ul>
 
-        <!-- where suggestions will appear -->
-        <ul
-          id="recipe-results"
-          class="recipe-results"
-          aria-live="polite"
-        ></ul>
-      </section>
-    </main>
+        <p class="help help-secondary" id="sample-note">
+          We preloaded a few sample ingredients so you can see how
+          LeftoverChef works and you can clear or replace them any time.
+        </p>
+      </div>
+    </section>
 
-    <!-- Toast (for undo after Clear all) -->
-    <div id="toast" class="toast" aria-live="polite"></div>
+    <!-- STEP 3 · FULL-WIDTH CARD UNDER STEP 1 -->
+    <section class="card step3-card" id="step3">
+      <div class="step3-header">
+        <p class="step-label">Step 3 · Get AI recipes</p>
+        <h2>Recipe suggestions</h2>
+        <p class="step3-subtitle">
+          We highlight recipes that use the most of what you already have.
+        </p>
 
-    <!-- STEP 1 + STEP 3 BEHAVIOR SCRIPT -->
-    <script>
-      const pantry = new Set();
-      const pantryList = document.getElementById("pantry-list");
-      const ingInput = document.getElementById("ing-input");
-      const ingForm = document.getElementById("ing-form");
-      const ingError = document.getElementById("ing-error");
-      const clearBtn = document.getElementById("clear-btn");
-      const toast = document.getElementById("toast");
-      let lastPantrySnapshot = null;
+        <button type="button" class="btn primary" id="suggest-btn">
+          Suggest recipes
+        </button>
 
-      function renderPantry() {
-        pantryList.innerHTML = "";
-        pantry.forEach((item) => {
-          const li = document.createElement("li");
-          li.innerHTML =
-            "<span>" +
-            item +
-            '</span><button type="button" aria-label="Remove ' +
-            item +
-            '">×</button>';
+        <p class="help" id="recipe-results-help">
+          When you’re ready, click <strong>Suggest recipes</strong> to see
+          ideas.
+        </p>
+      </div>
 
-          li.querySelector("button").addEventListener("click", () => {
-            pantry.delete(item);
-            renderPantry();
-          });
+      <!-- where suggestions will appear -->
+      <ul id="recipe-results" class="recipe-results" aria-live="polite"></ul>
+    </section>
+  </main>
 
-          pantryList.appendChild(li);
+  <!-- Toast (for undo after Clear all) -->
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <!-- STEP 1 + STEP 3 BEHAVIOR SCRIPT -->
+  <script>
+    const pantry = new Set();
+    const pantryList = document.getElementById("pantry-list");
+    const ingInput = document.getElementById("ing-input");
+    const ingForm = document.getElementById("ing-form");
+    const ingError = document.getElementById("ing-error");
+    const clearBtn = document.getElementById("clear-btn");
+    const toast = document.getElementById("toast");
+    let lastPantrySnapshot = null;
+
+    function renderPantry() {
+      pantryList.innerHTML = "";
+      pantry.forEach((item) => {
+        const li = document.createElement("li");
+        li.innerHTML =
+          "<span>" +
+          item +
+          '</span><button type="button" aria-label="Remove ' +
+          item +
+          '">×</button>';
+
+        li.querySelector("button").addEventListener("click", () => {
+          pantry.delete(item);
+          renderPantry();
         });
+
+        pantryList.appendChild(li);
+      });
+    }
+
+    function showToast(message, options = {}) {
+      if (!toast) return;
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      toast.onclick = null;
+      if (options.onClick) {
+        toast.onclick = () => {
+          options.onClick();
+          hideToast();
+        };
       }
 
-      function showToast(message, options = {}) {
-        if (!toast) return;
-        toast.textContent = message;
-        toast.classList.add("show");
-
-        toast.onclick = null;
-        if (options.onClick) {
-          toast.onclick = () => {
-            options.onClick();
-            hideToast();
-          };
-        }
-
-        if (options.duration !== 0) {
-          const timeout = options.duration || 4000;
-          setTimeout(hideToast, timeout);
-        }
+      if (options.duration !== 0) {
+        const timeout = options.duration || 4000;
+        setTimeout(hideToast, timeout);
       }
+    }
 
-      function hideToast() {
-        if (!toast) return;
-        toast.classList.remove("show");
-        toast.onclick = null;
-      }
+    function hideToast() {
+      if (!toast) return;
+      toast.classList.remove("show");
+      toast.onclick = null;
+    }
 
-      function addFromText(text) {
-        if (!text) return;
-        text
-          .split(",")
-          .map((s) => s.trim().toLowerCase())
-          .filter(Boolean)
-          .forEach((t) => pantry.add(t));
-        renderPantry();
-      }
+    function addFromText(text) {
+      if (!text) return;
+      text
+        .split(",")
+        .map((s) => s.trim().toLowerCase())
+        .filter(Boolean)
+        .forEach((t) => pantry.add(t));
+      renderPantry();
+    }
 
-      // Submit handler
-      ingForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const raw = ingInput.value.trim();
+    // Submit handler
+    ingForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const raw = ingInput.value.trim();
 
-        if (!raw) {
-          ingError.textContent =
-            "Please enter at least one ingredient before adding.";
-          ingInput.focus();
-          return;
-        }
-
-        ingError.textContent = "";
-        addFromText(raw);
-        ingInput.value = "";
+      if (!raw) {
+        ingError.textContent =
+          "Please enter at least one ingredient before adding.";
         ingInput.focus();
+        return;
+      }
+
+      ingError.textContent = "";
+      addFromText(raw);
+      ingInput.value = "";
+      ingInput.focus();
+    });
+
+    // Clear all button
+    clearBtn.addEventListener("click", () => {
+      if (pantry.size === 0) return;
+
+      lastPantrySnapshot = Array.from(pantry);
+      pantry.clear();
+      renderPantry();
+
+      showToast("Pantry cleared. Click here to undo.", {
+        onClick: () => {
+          pantry.clear();
+          lastPantrySnapshot.forEach((item) => pantry.add(item));
+          renderPantry();
+          lastPantrySnapshot = null;
+        },
       });
+    });
 
-      // Clear all button
-      clearBtn.addEventListener("click", () => {
-        if (pantry.size === 0) return;
+    // "/" key focuses the input
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "/") {
+        e.preventDefault();
+        ingInput.focus();
+      }
+    });
 
-        lastPantrySnapshot = Array.from(pantry);
-        pantry.clear();
-        renderPantry();
+    // Preload sample chips
+    ["rice", "egg", "onion"].forEach(addFromText);
 
-        showToast("Pantry cleared. Click here to undo.", {
-          onClick: () => {
-            pantry.clear();
-            lastPantrySnapshot.forEach((item) => pantry.add(item));
-            renderPantry();
-            lastPantrySnapshot = null;
-          },
-        });
-      });
+    // -------- STEP 3 RECIPE SUGGESTIONS --------
+    const recipes = [
+      {
+        name: "Veggie Fried Rice",
+        ingredients: ["rice", "egg", "onion", "peas", "carrot", "soy sauce"],
+      },
+      {
+        name: "Simple Omelette",
+        ingredients: ["egg", "onion", "cheese", "butter"],
+      },
+      {
+        name: "Garlic Rice Bowl",
+        ingredients: ["rice", "onion", "garlic", "oil"],
+      },
+      {
+        name: "Stir-Fry Leftover Bowl",
+        ingredients: ["rice", "egg", "onion", "soy sauce", "mixed veggies"],
+      },
+    ];
 
-      // "/" key focuses the input
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "/") {
-          e.preventDefault();
-          ingInput.focus();
-        }
-      });
+    const suggestBtn = document.getElementById("suggest-btn");
+    const resultsList = document.getElementById("recipe-results");
+    const resultsHelp = document.getElementById("recipe-results-help");
 
-      // Preload sample chips
-      ["rice", "egg", "onion"].forEach(addFromText);
+    function suggestRecipes() {
+      const scored = recipes
+        .map((r) => {
+          const matches = r.ingredients.filter((ing) => pantry.has(ing));
+          return {
+            ...r,
+            matches,
+            matchCount: matches.length,
+          };
+        })
+        .filter((r) => r.matchCount > 0)
+        .sort((a, b) => b.matchCount - a.matchCount);
 
-      // -------- STEP 3 RECIPE SUGGESTIONS --------
-      const recipes = [
-        {
-          name: "Veggie Fried Rice",
-          ingredients: ["rice", "egg", "onion", "peas", "carrot", "soy sauce"],
-        },
-        {
-          name: "Simple Omelette",
-          ingredients: ["egg", "onion", "cheese", "butter"],
-        },
-        {
-          name: "Garlic Rice Bowl",
-          ingredients: ["rice", "onion", "garlic", "oil"],
-        },
-        {
-          name: "Stir-Fry Leftover Bowl",
-          ingredients: ["rice", "egg", "onion", "soy sauce", "mixed veggies"],
-        },
-      ];
+      resultsList.innerHTML = "";
 
-      const suggestBtn = document.getElementById("suggest-btn");
-      const resultsList = document.getElementById("recipe-results");
-      const resultsHelp = document.getElementById("recipe-results-help");
-
-      function suggestRecipes() {
-        const scored = recipes
-          .map((r) => {
-            const matches = r.ingredients.filter((ing) => pantry.has(ing));
-            return {
-              ...r,
-              matches,
-              matchCount: matches.length,
-            };
-          })
-          .filter((r) => r.matchCount > 0)
-          .sort((a, b) => b.matchCount - a.matchCount);
-
-        resultsList.innerHTML = "";
-
-        if (scored.length === 0) {
-          resultsHelp.textContent =
-            "We couldn’t find any recipes using what you’ve added yet. Try adding a few more ingredients.";
-          return;
-        }
-
+      if (scored.length === 0) {
         resultsHelp.textContent =
-          "Here are some ideas that use the most of what you already have:";
+          "We couldn’t find any recipes using what you’ve added yet. Try adding a few more ingredients.";
+        return;
+      }
 
-        scored.forEach((recipe) => {
-          const missing = recipe.ingredients.filter((ing) => !pantry.has(ing));
+      resultsHelp.textContent =
+        "Here are some ideas that use the most of what you already have:";
 
-          const li = document.createElement("li");
-          li.className = "recipe-card";
-          li.innerHTML = `
+      scored.forEach((recipe) => {
+        const missing = recipe.ingredients.filter((ing) => !pantry.has(ing));
+
+        const li = document.createElement("li");
+        li.className = "recipe-card";
+        li.innerHTML = `
             <h4>${recipe.name}</h4>
             <p><strong>Uses from your pantry:</strong> ${recipe.matches.join(
-              ", "
-            )}</p>
+          ", "
+        )}</p>
             <p class="recipe-missing">
-              ${
-                missing.length
-                  ? "You’d also need: " + missing.join(", ")
-                  : "You already have everything!"
-              }
+              ${missing.length
+            ? "You’d also need: " + missing.join(", ")
+            : "You already have everything!"
+          }
             </p>
           `;
-          resultsList.appendChild(li);
-        });
-      }
+        resultsList.appendChild(li);
+      });
+    }
 
-      suggestBtn.addEventListener("click", suggestRecipes);
-    </script>
-  </body>
+    suggestBtn.addEventListener("click", suggestRecipes);
+  </script>
+  <script src="dist/swiper-bundle.min.js"></script>
+  <script src="dist/step2.js"></script>
+</body>
+
 </html>

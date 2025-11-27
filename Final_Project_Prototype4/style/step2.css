@@ -1,7 +1,7 @@
 /* Google Fonts - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-*{
+/* *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,25 +13,25 @@ body{
   align-items: center;
   justify-content: center;
   background: linear-gradient(to right, #f5cebc, #f1eaf0);
-}
+} */
 .icon {
   width: 26px;
   height: 26px;
   object-fit: contain;
 }
 
-.slide-container{
+.slide-container {
   max-width: 1120px;
   width: 100%;
-  padding: 40px 0;
-  margin-left: -40px;
+  padding: 40px 0 24px;
+  margin: 0 auto;
 }
 .slide-content{
   margin: 0 40px;
   overflow: hidden;
   border-radius: 25px;
 }
-.card{
+.tool-card {
   border-radius: 25px;
   background-color: #FFF;
 }
