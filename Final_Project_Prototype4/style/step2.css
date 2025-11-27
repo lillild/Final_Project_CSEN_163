@@ -14,6 +14,12 @@ body{
   justify-content: center;
   background: linear-gradient(to right, #f5cebc, #f1eaf0);
 }
+.icon {
+  width: 26px;   /* controls size */
+  height: 26px;  /* controls size */
+  object-fit: contain; /* prevents distortion */
+}
+
 .slide-container{
   max-width: 1120px;
   width: 100%;

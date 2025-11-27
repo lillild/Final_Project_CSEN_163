@@ -267,3 +267,9 @@ body {
     background: var(--burgundy);
     color: #fff;
 }
+.icon {
+    width: 26px;   /* controls size */
+    height: 26px;  /* controls size */
+    object-fit: contain; /* prevents distortion */
+  }
+  

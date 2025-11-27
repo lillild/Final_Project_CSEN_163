@@ -159,3 +159,8 @@ a {
   text-indent: -9999px;
   overflow: hidden;
 }
+.icon {
+  width: 26px;   /* controls size */
+  height: 26px;  /* controls size */
+  object-fit: contain; /* prevents distortion */
+}
