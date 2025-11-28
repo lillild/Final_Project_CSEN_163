@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veggie Fried Rice</title>
+  <link rel="stylesheet" href="style/example1.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- IMAGE + TOP BUTTON -->
+    <header class="hero">
+      <img src="images/example1.png" alt="Veggie fried rice" class="hero-img" />
+
+      <button class="round-btn close-btn" aria-label="Close">✕</button>
+      <button class="round-btn more-btn" aria-label="Share options">⋯</button>
+
+      <!-- RECIPE CARD -->
+      <section class="recipe-card">
+        <div class="recipe-card-main">
+          <div class="recipe-title-row">
+            <h1 class="recipe-title">Easy Veggie Fried Rice</h1>
+          </div>
+
+          <p class="missing-text">
+            You’re missing <strong>3 ingredients</strong>
+          </p>
+
+          <div class="recipe-meta">
+            <div class="time-pill">
+              <span class="time-icon">⏱</span>
+              <span>30 mins</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+      <section class="ingredients">
+        <h2>Ingredients</h2>
+
+        <ul class="ingredient-list">
+          <li>
+            <span>3 cups cooked white rice</span>
+            <span class="icon icon-check">✓</span>
+          </li>
+
+          <li class="needs">
+            <span><strong>2 tbsp of oil</strong></span>
+            <span class="icon icon-plus">+</span>
+          </li>
+
+          <li>
+            <span>1 medium onion, chopped</span>
+            <span class="icon icon-check">✓</span>
+          </li>
+
+          <li>
+            <span>2–3 eggs, lightly beaten</span>
+            <span class="icon icon-check">✓</span>
+          </li>
+
+          <li class="needs">
+            <span><strong>1 cup frozen peas</strong></span>
+            <span class="icon icon-plus">+</span>
+          </li>
+
+          <li class="needs">
+            <span><strong>1 cup diced carrots</strong></span>
+            <span class="icon icon-plus">+</span>
+          </li>
+
+          <li class="needs">
+            <span><strong>3 tbsp soy sauce</strong></span>
+            <span class="icon icon-plus">+</span>
+          </li>
+        </ul>
+
+        <!-- EQUIPMENT-->
+        <div class="equipment-row">
+          <span class="equipment-label">You have:</span>
+          <div class="equipment-chips">
+            <span class="chip chip-have">✓ Rice cooker</span>
+            <span class="chip chip-have">✓ Stovetop &amp; pan</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANTRY SUMMARY CARD -->
+      <section class="pantry-card">
+        <p class="pantry-uses">
+          <span class="label">Uses from your pantry:</span>
+          rice, egg, onion
+        </p>
+
+        <p class="pantry-more">
+          <span class="need-title">You’d also need:
+            oil,peas, carrot, soy sauce</span>
+        </p>
+      </section>
+
+
+      <!-- RECIPE STEPS CARD -->
+      <section class="steps-card">
+        <h3 class="steps-title">How to make it</h3>
+        <ol class="steps-list">
+
+          <li>
+            Break up leftover rice so the grains are separate. Heat oil in a hot pan
+            and toast half the rice until lightly browned and chewy. Transfer and repeat.
+            <div class="step-image">
+              <img src="images/exp1_step1.png">
+            </div>
+          </li>
+
+          <li>
+            Push rice to the sides. Add oil, then cook onion and carrot until fragrant.
+            Toss with the rice and stir in soy sauce.
+            <div class="step-image">
+              <img src="images/exp1_step2.png">
+            </div>
+          </li>
+
+          <li>
+            Move rice aside and scramble eggs in the center. Season, cook until just set,
+            then mix into the rice.
+            <div class="step-image">
+              <img src="images/exp1_step3.png">
+            </div>
+          </li>
+
+          <li>
+            Add frozen peas and stir until hot and every grain of rice is separate.
+            Serve immediately.
+            <div class="step-image">
+              <img src="images/exp1_step4.png">
+            </div>
+          </li>
+
+        </ol>
+      </section>
+    </main>
+
+    <div class="made-it-wrapper">
+      <button class="made-it-btn">I made it!</button>
+    </div>
+
+  </div>
+  <script>
+    const closeBtn = document.querySelector(".close-btn");
+    const madeItBtn = document.querySelector(".made-it-btn");
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        window.location.href = "step1.html";
+      });
+    }
+
+    if (madeItBtn) {
+      madeItBtn.addEventListener("click", () => {
+        window.location.href = "step1.html";
+      });
+    }
+  </script>
+</body>
+</html>

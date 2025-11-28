@@ -433,10 +433,12 @@
     const recipes = [
       {
         name: "Veggie Fried Rice",
+        link: "example1.html",
         ingredients: ["rice", "egg", "onion", "peas", "carrot", "soy sauce"],
       },
       {
         name: "Simple Omelette",
+        link: "example2.html",
         ingredients: ["egg", "onion", "cheese", "butter"],
       },
       {
@@ -482,18 +484,32 @@
 
         const li = document.createElement("li");
         li.className = "recipe-card";
+
         li.innerHTML = `
+          <div class="recipe-main">
             <h4>${recipe.name}</h4>
-            <p><strong>Uses from your pantry:</strong> ${recipe.matches.join(
-          ", "
-        )}</p>
+            <p><strong>Uses from your pantry:</strong> ${recipe.matches.join(", ")}</p>
             <p class="recipe-missing">
-              ${missing.length
-            ? "You’d also need: " + missing.join(", ")
-            : "You already have everything!"
-          }
+              ${missing.length ? "You’d also need: " + missing.join(", ") : "You already have everything!"}
             </p>
-          `;
+          </div>
+          <div class="recipe-actions">
+            <button
+              type="button"
+              class="btn primary make-it-btn"
+              ${recipe.link ? `data-link="${recipe.link}"` : ""}
+            >
+              Make it!
+            </button>
+          </div>
+        `;
+        const makeBtn = li.querySelector(".make-it-btn");
+        if (recipe.link && makeBtn) {
+          makeBtn.addEventListener("click", () => {
+            window.location.href = recipe.link;
+          });
+        }
+
         resultsList.appendChild(li);
       });
     }

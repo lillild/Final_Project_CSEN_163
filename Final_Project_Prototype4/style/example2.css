@@ -1,0 +1,380 @@
+/* ---------- THEME ---------- */
+
+:root {
+  --plum: #6d1a36;
+  --peach: #f7b7a3;
+  --cream: #ffe9d6;
+  --sand: #f5cebc;
+  --lavender: #f1eaf0;
+  --text-muted: #666;
+  --text-dark: #333;
+  --white: #ffffff;
+   --bg-start: #f5cebc;
+  --bg-end: #f1eaf0;
+}
+
+/* ---------- BG ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Montserrat', sans-serif;
+  background: linear-gradient(to right, var(--bg-start), var(--bg-end));
+  color: var(--text-dark);
+}
+
+.app {
+  max-width: 430px;
+  margin: 1.5rem auto;
+  background: var(--white);
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.round-btn {
+  position: absolute;
+  top: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: var(--cream);
+  color: var(--text-dark);
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.round-btn:hover {
+  background: var(--peach);
+  transform: scale(1.08);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.18);
+}
+
+.close-btn { left: 14px; }
+.more-btn  { right: 14px; position: absolute; }
+
+.more-btn {
+  position: absolute;
+}
+
+.more-btn::after {
+  content: "share";
+  position: absolute;
+  left: 50%;
+  top: 115%;
+  transform: translateX(-50%) translateY(4px);
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.78);
+  color: #fff;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.more-btn:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ---------- FLOATING CARD ---------- */
+
+.recipe-card {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+}
+
+.recipe-card-main {
+  background: var(--cream);
+  border-radius: 22px;
+  padding: 18px 18px 14px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  text-align: center;
+}
+
+.recipe-title-row {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.recipe-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.missing-text {
+  margin: 6px 0 8px;
+  font-size: 0.85rem;
+  color: var(--plum);
+}
+
+.recipe-meta {
+  display: flex;
+  justify-content: center;
+}
+
+.time-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--sand);
+  font-size: 0.8rem;
+  color: var(--text-dark);
+}
+
+.time-icon {
+  font-size: 0.9rem;
+}
+
+.content {
+  padding: 22px 22px 28px;
+}
+
+/* INGREDIENTS */
+
+.ingredients h2 {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+}
+
+.ingredient-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ingredient-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #ecd3c8;
+  font-size: 0.95rem;
+}
+
+.ingredient-list li:last-child {
+  border-bottom: none;
+}
+
+.needs span:first-child {
+  color: var(--plum);
+  font-weight: 700;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.15s ease;
+  flex-shrink: 0;
+}
+
+.icon-check {
+  background: #d7f5d8;
+  color: #1c7c2d;
+}
+.icon-check:hover {
+  transform: scale(1.12);
+}
+
+.icon-plus {
+  border: 1px solid #e1b6a7;
+  background: var(--white);
+  color: var(--plum);
+}
+.icon-plus:hover {
+  background: var(--peach);
+  transform: scale(1.12);
+}
+
+/* ---------- EQUIPMENT  ---------- */
+
+.equipment-row {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  font-size: 0.85rem;
+}
+
+.equipment-label {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.equipment-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+.chip-have {
+  background: #d7f5d8;
+  color: #1c7c2d;
+}
+
+/* ---------- PANTRY ---------- */
+
+.pantry-card {
+  margin-top: 22px;
+  padding: 16px;
+  background: var(--lavender);
+  border-radius: 18px;
+  text-align: center;
+}
+
+.pantry-title {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  color: var(--plum);
+}
+
+.pantry-uses {
+  margin: 0 0 4px;
+  font-size: 0.85rem;
+}
+
+.pantry-more {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.pantry-uses .label {
+  font-weight: 600;
+}
+
+/* ---------- STEPS ---------- */
+
+.steps-card {
+  margin-top: 22px;
+  padding: 16px 16px 18px;
+  background: #fff7f4;
+  border-radius: 18px;
+  border: 1px solid #f0d2c6;
+}
+
+.steps-title {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  color: var(--plum);
+}
+
+.steps-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.steps-list li + li {
+  margin-top: 6px;
+}
+
+
+.step-image {
+  margin-top: 10px;
+}
+
+.step-image img {
+  width: 100%;
+  height: 200px;             
+  object-fit: cover;         
+  border-radius: 14px;      
+  display: block;
+  background: var(--cream);  
+  border: 1px solid #f0d2c6; 
+}
+
+.ingredients h2 {
+  text-align: center;
+  width: 100%;
+}
+
+.steps-title {
+  text-align: center;
+  width: 100%;
+  font-size: 1.3rem;
+}
+
+.pantry-card {
+  text-align: center;
+}
+
+.need-title {
+  color: #8b0f28;        
+  font-weight: 800;      
+  font-size: 1rem;       
+}
+
+.made-it-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  margin-bottom: 40px;     
+}
+
+.made-it-btn {
+  background: var(--plum);  
+  color: white;
+  font-size: 1rem;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.made-it-btn:hover {
+  background: #4c0f23;      
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}

@@ -4,7 +4,6 @@ const loginBtn = document.getElementById("login");
 const signInFormBtn = document.getElementById("signIn");
 const signUpFormBtn = document.getElementById("signUpFormBtn");
 
-// Toggle panels
 if (registerBtn && container) {
   registerBtn.addEventListener("click", () => {
     container.classList.add("active");
@@ -17,7 +16,6 @@ if (loginBtn && container) {
   });
 }
 
-// Sign up completed
 if (signUpFormBtn) {
   signUpFormBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -27,10 +25,9 @@ if (signUpFormBtn) {
   });
 }
 
-// 🔥 Sign in -> go to landing.html
 if (signInFormBtn) {
   signInFormBtn.addEventListener("click", (e) => {
-    e.preventDefault(); // stop form from reloading login.html
+    e.preventDefault();
     console.log("Login clicked – going to landing.html");
     window.location.href = "landing.html";
   });

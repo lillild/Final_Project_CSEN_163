@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Omelette</title>
+  <link rel="stylesheet" href="style/example1.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <!--IMAGE + TOP BUTTON -->
+    <header class="hero">
+      <img src="images/example2.png" alt="Simple omelette" class="hero-img" />
+
+      <button class="round-btn close-btn" aria-label="Close">✕</button>
+      <button class="round-btn more-btn" aria-label="Share options">⋯</button>
+
+      <!-- RECIPE CARD -->
+      <section class="recipe-card">
+        <div class="recipe-card-main">
+          <div class="recipe-title-row">
+            <h1 class="recipe-title">Simple Omelette</h1>
+          </div>
+
+          <p class="missing-text">
+            You’re missing <strong>2 ingredients</strong>
+          </p>
+
+          <div class="recipe-meta">
+            <div class="time-pill">
+              <span class="time-icon">⏱</span>
+              <span>10 mins</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+      <section class="ingredients">
+        <h2>Ingredients</h2>
+
+        <ul class="ingredient-list">
+          <li>
+            <span>2–3 eggs</span>
+            <span class="icon icon-check">✓</span>
+          </li>
+
+          <li>
+            <span>1/4 small onion, finely chopped</span>
+            <span class="icon icon-check">✓</span>
+          </li>
+
+          <li class="needs">
+            <span><strong>1 tbsp butter</strong></span>
+            <span class="icon icon-plus">+</span>
+          </li>
+
+          <li class="needs">
+            <span><strong>2 tbsp shredded cheese</strong></span>
+            <span class="icon icon-plus">+</span>
+          </li>
+
+          <li>
+            <span>Salt &amp; pepper</span>
+            <span class="icon icon-check">✓</span>
+          </li>
+        </ul>
+
+        <!-- EQUIPMENT -->
+        <div class="equipment-row">
+          <span class="equipment-label">You have:</span>
+          <div class="equipment-chips">
+            <span class="chip chip-have">✓ Stovetop &amp; pan</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANTRY CARD -->
+      <section class="pantry-card">
+        <h3 class="pantry-title">Simple Omelette</h3>
+        <p class="pantry-uses">
+          <span class="label">Uses from your pantry:</span>
+          egg, onion
+        </p>
+
+        <p class="pantry-more">
+          <span class="need-title">You’d also need:
+            cheese, butter</span>
+        </p>
+      </section>
+
+      <!-- RECIPE STEPS CARD -->
+      <section class="steps-card">
+        <h3 class="steps-title">How to make it</h3>
+        <ol class="steps-list">
+
+          <li>
+            Crack eggs into a bowl, add a pinch of salt and pepper, and beat
+            with a fork until the mixture is smooth and slightly frothy.
+            <div class="step-image">
+              <img src="images/exp2_step1.png" alt="Whisking eggs with seasoning">
+            </div>
+          </li>
+
+          <li>
+            Heat butter (and a little oil if using) in a non-stick pan over
+            medium heat. Add chopped onion and cook until softened and fragrant.
+            <div class="step-image">
+              <img src="images/exp2_step2.png" alt="Cooking onion in a pan">
+            </div>
+          </li>
+
+          <li>
+            Pour the beaten eggs over the onions. Let the eggs set around the
+            edges, gently pushing the cooked parts toward the center so the
+            uncooked egg flows outward.
+            <div class="step-image">
+              <img src="images/exp2_step3.png" alt="Cooking the omelette in the pan">
+            </div>
+          </li>
+
+          <li>
+            When the omelette is mostly set but still slightly soft on top,
+            sprinkle cheese over one half. Fold the omelette over the filling
+            and cook another 30–60 seconds until the cheese melts. Slide onto
+            a plate and serve immediately.
+            <div class="step-image">
+              <img src="images/exp2_step4.png" alt="Folded omelette ready to serve">
+            </div>
+          </li>
+
+        </ol>
+      </section>
+    </main>
+
+    <div class="made-it-wrapper">
+      <button class="made-it-btn">I made it!</button>
+    </div>
+
+  </div>
+  <script>
+    const closeBtn = document.querySelector(".close-btn");
+    const madeItBtn = document.querySelector(".made-it-btn");
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        window.location.href = "step1.html";
+      });
+    }
+
+    if (madeItBtn) {
+      madeItBtn.addEventListener("click", () => {
+        window.location.href = "step1.html";
+      });
+    }
+  </script>
+</body>
+</html>
