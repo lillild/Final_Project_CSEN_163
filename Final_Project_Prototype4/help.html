@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help – LeftoverChef</title>
+
+  <!-- FIRST load navbar styling -->
+  <link rel="stylesheet" href="style/nav.css" />
+
+  <!-- Help page custom CSS -->
+  <link rel="stylesheet" href="style/help.css" />
+
+  <!-- Navbar JS -->
+  <script src="dist/nav.js" defer></script>
+</head>
+
+<body>
+
+  <!-- ---------------- NAVBAR (copied from your working pages) ---------------- -->
+  <header class="site-header">
+    <div class="nav-wrapper">
+      <a href="home.html" class="brand">
+        <img src="images/logo_no_text.png" alt="LeftoverChef logo" class="brand-logo" />
+        <span class="brand-name">LeftoverChef</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="main-nav">
+        <a href="home.html" class="nav-item">
+          <img src="images/home_icon.png" alt="" />
+          <span>Home</span>
+        </a>
+
+        <a href="step1.html" class="nav-item">
+          <img src="images/recipes.png" alt="" />
+          <span>Recipes</span>
+        </a>
+
+        <a href="impact.html" class="nav-item">
+          <img src="images/impact_score.png" alt="" />
+          <span>Impact Score</span>
+        </a>
+
+        <a href="help.html" class="nav-item active">
+          <img src="images/help.png" alt="" />
+          <span>Help</span>
+        </a>
+
+        <a href="account.html" class="nav-item">
+          <img src="images/account.png" alt="" />
+          <span>Account</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ------------------ HELP PAGE CONTENT ------------------ -->
+  <section class="help-container">
+
+    <h1 class="help-title">How can we help you?</h1>
+
+    <!-- Search bar -->
+    <input type="text" id="faqSearch" class="faq-search" placeholder="Search FAQs…">
+
+    <div class="suggested-box">
+        <h3 class="suggested-title">Suggested Questions</h3>
+        <div class="suggested-questions">
+            <button class="suggested-btn">Why are my ingredients not showing up?</button>
+            <button class="suggested-btn">How do I improve my impact score?</button>
+            <button class="suggested-btn">Can I save my ingredient lists?</button>
+        </div>
+    </div>
+
+
+    <!-- FAQ Accordion -->
+
+    <div class="faq-item">
+        <button class="faq-question">
+            How do I find recipes with what I have?
+            <img class="faq-icon" src="images/arrow-down.png" alt="">
+        </button>
+        <p class="faq-answer">
+            After entering your ingredients, click “Generate Recipes” and scroll through recommendations.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            How does the impact score work?
+            <img class="faq-icon" src="images/arrow-down.png" alt="">
+        </button>
+        <p class="faq-answer">
+            Your score increases when you reduce waste by cooking with ingredients you already have.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Can I use leftover ingredients from last week?
+            <img class="faq-icon" src="images/arrow-down.png" alt="">
+        </button>
+        <p class="faq-answer">
+            Yes! You can enter any ingredients you have, including leftovers. Just check for freshness, and the app will suggest recipes that match.
+        </p>
+    </div>
+
+    <!-- Contact Form -->
+    <h2 class="contact-title">Contact Us</h2>
+
+    <form id="contactForm" class="contact-form">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="send-btn">Send Message</button>
+      <p class="success-msg" id="successMsg">Message sent! We’ll get back to you soon.</p>
+    </form>
+
+  </section>
+
+  <!-- JS files -->
+  <script src="dist/nav.js"></script>
+  <script src="dist/help.js"></script>
+
+</body>
+</html>
+
