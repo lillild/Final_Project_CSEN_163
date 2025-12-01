@@ -403,6 +403,8 @@
     // Clear all button
     clearBtn.addEventListener("click", () => {
       if (pantry.size === 0) return;
+      const confirmed = confirm("Are you sure you want to clear all ingredients?");
+      if (!confirmed) return;
 
       lastPantrySnapshot = Array.from(pantry);
       pantry.clear();
