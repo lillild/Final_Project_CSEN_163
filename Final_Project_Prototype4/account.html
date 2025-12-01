@@ -60,11 +60,13 @@
 
             <nav class="account-nav">
                 <p class="account-nav-label">Overview</p>
-                <p class="account-nav-link is-active">Account summary</p>
+                <p class="account-nav-link is-active" data-target="account-summary">Account summary</p>
 
                 <p class="account-nav-label">My profile</p>
-                <p class="account-nav-link">Account info</p>
-                <p class="account-nav-link">Recipes made</p>
+                <p class="account-nav-link" data-target="account-info">Account info</p>
+                <p class="account-nav-link" data-target="recipes-made">Recipes made</p>
+                <p class="account-nav-link" data-target="dietary-preferences">Dietary preferences</p>
+                <p class="account-nav-link" data-target="notification-preferences">Notification / Email preferences</p>
             </nav>
 
             <button class="signout-btn">Sign out</button>
@@ -78,13 +80,13 @@
             </header>
 
             <!-- Impact score card -->
-            <section class="account-card impact-card">
+            <section class="account-card impact-card" id="account-summary">
                 <div class="card-header">
                     <h2>Impact score</h2>
                     <span class="impact-tag">This month</span>
                 </div>
                 <div class="impact-body">
-                    <div class="impact-number">82</div>
+                    <div class="impact-number">78</div>
                     <div class="impact-text">
                         <p>You’ve saved <strong>6 meals</strong> from going to waste.</p>
                         <p>Keep cooking to raise your impact score!</p>
@@ -93,7 +95,7 @@
             </section>
 
             <!-- Account info card -->
-            <section class="account-card">
+            <section class="account-card" id="account-info">
                 <div class="card-header">
                     <h2>Account information</h2>
                 </div>
@@ -125,14 +127,6 @@
 
                     <div class="field-row">
                         <div>
-                            <p class="label">Primary Location</p>
-                            <p class="value">Santa Clara, CA</p>
-                        </div>
-                        <button class="field-action">Change</button>
-                    </div>
-
-                    <div class="field-row">
-                        <div>
                             <p class="label">Password</p>
                             <p class="value">••••••••••</p>
                         </div>
@@ -154,7 +148,6 @@
                 <div class="card-header">
                     <h2>Recipes made</h2>
                     <span class="subtext">Based on your leftover sessions</span>
-                    <a href="Recipe.html" class="card-action">+</a>
                 </div>
                 <ul class="recipes-list">
                     <li>
@@ -175,8 +168,114 @@
                     </li>
                 </ul>
             </section>
+
+            <!-- Dietary preferences card -->
+            <section class="account-card" id="dietary-preferences">
+                <div class="card-header">
+                    <h2>Dietary preferences</h2>
+                </div>
+
+                <div class="info-grid">
+                    <div class="field-row">
+                        <div>
+                            <p class="label">Diet types</p>
+                            <p class="value">
+                                <label>
+                                    <input type="checkbox" /> Vegetarian
+                                </label>
+                                &nbsp;&nbsp;
+                                <label>
+                                    <input type="checkbox" /> Vegan
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <div>
+                            <p class="label">Ingredient filters</p>
+                            <p class="value">
+                                <label>
+                                    <input type="checkbox" /> Gluten-free
+                                </label>
+                                &nbsp;&nbsp;
+                                <label>
+                                    <input type="checkbox" /> Nut-free
+                                </label>
+                                &nbsp;&nbsp;
+                                <label>
+                                    <input type="checkbox" /> Dairy-free
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <div>
+                            <p class="label">Allergies</p>
+                            <p class="value">Peanuts and Shellfish</p>
+                        </div>
+                        <button class="field-action">Edit</button>
+                    </div>
+
+                    <div class="field-row">
+                        <div>
+                            <p class="label">Disliked ingredients</p>
+                            <p class="value">List ingredients you don’t like</p>
+                        </div>
+                        <button class="field-action">Edit</button>
+                    </div>
+            </section>
+
+            <section class="account-card" id="notification-preferences">
+                <div class="card-header">
+                    <h2>Notification / Email preferences</h2>
+                </div>
+
+                <div class="info-grid">
+                    <div class="field-row">
+                        <div>
+                            <p class="label">Leftover-saving tips</p>
+                            <p class="value">
+                                <label>
+                                    <input type="checkbox" checked /> Send leftover-saving tips
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <div>
+                            <p class="label">Weekly impact report</p>
+                            <p class="value">
+                                <label>
+                                    <input type="checkbox" checked /> Send weekly impact report
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </section>
     </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const navLinks = document.querySelectorAll(".account-nav-link[data-target]");
+
+            navLinks.forEach((link) => {
+                link.addEventListener("click", () => {
+                    const targetId = link.getAttribute("data-target");
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                    navLinks.forEach((l) => l.classList.remove("is-active"));
+                    link.classList.add("is-active");
+                });
+            });
+        });
+    </script>
 
     <script src="dist/nav.js"></script>
 </body>
