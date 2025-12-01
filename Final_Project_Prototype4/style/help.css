@@ -11,7 +11,6 @@
     --radius-lg: 20px;
 }
 
-/* RESET */
 * {
     padding: 0;
     margin: 0;
@@ -24,13 +23,11 @@ body {
     color: var(--text-main);
 }
 
-/* Prevent help.css from wiping navbar */
 header * {
   all: unset;
   all: revert-layer;
 }
 
-/* ------------------ MAIN CONTAINER ------------------ */
 .help-container {
   max-width: 900px;
   margin: 40px auto;
@@ -40,7 +37,6 @@ header * {
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
-/* ------------------ TITLE ------------------ */
 .help-title {
   font-size: 38px;
   text-align: center;
@@ -49,7 +45,6 @@ header * {
   font-weight: 800;
 }
 
-/* ------------------ SEARCH BAR ------------------ */
 .faq-search {
   width: 100%;
   padding: 16px 20px;
@@ -66,7 +61,6 @@ header * {
   box-shadow: 0 0 10px #6d1a3625;
 }
 
-/* ------------------ SUGGESTED QUESTIONS ------------------ */
 .suggested-box {
   background: #fff4ef;
   border: 2px solid #f7b7a3;
@@ -106,7 +100,6 @@ header * {
   box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 
-/* ------------------ FAQ ACCORDION ------------------ */
 .faq-section {
   margin-bottom: 40px;
 }
@@ -160,14 +153,13 @@ header * {
   color: var(--text-main);
   font-size: 13px;
   margin-top: 6px;
-  padding-top: 0; /* start collapsed */
+  padding-top: 0;
 }
 
 .faq-item.open .faq-answer {
-  padding-top: 0px; /* optional: space when expanded */
+  padding-top: 0px;
 }
 
-/* ------------------ CONTACT FORM ------------------ */
 .contact-title {
   font-size: 28px;
   margin: 35px 0 12px;
@@ -204,7 +196,6 @@ header * {
   resize: vertical;
 }
 
-/* ------------------ SEND BUTTON ------------------ */
 .send-btn {
   background: var(--burgundy);
   color: white;
@@ -231,7 +222,6 @@ header * {
   text-align: center;
 }
 
-/* ------------------ AI SECTION (if used later) ------------------ */
 .ai-box {
   margin-top: 40px;
   padding: 20px;
@@ -280,10 +270,10 @@ header * {
   gap: 15px;
   overflow-x: auto;
   padding: 5px 0;
-  scrollbar-width: none;       /* hide scrollbar (Firefox) */
+  scrollbar-width: none;
 }
 .suggested-row::-webkit-scrollbar {
-  display: none;               /* hide scrollbar (Chrome/Safari) */
+  display: none;
 }
 
 .suggest-card {

@@ -1,17 +1,15 @@
-// Accordion FAQ
 
 document.querySelectorAll(".faq-question").forEach(button => {
   button.addEventListener("click", () => {
-    const faqItem = button.parentElement; // the parent .faq-item
-    faqItem.classList.toggle("open"); // toggle open class
+    const faqItem = button.parentElement;
+    faqItem.classList.toggle("open");
 
     const answer = faqItem.querySelector(".faq-answer");
 
     if (faqItem.classList.contains("open")) {
-      // set maxHeight dynamically to fit content
       answer.style.maxHeight = answer.scrollHeight + "px";
     } else {
-      answer.style.maxHeight = null; // collapse
+      answer.style.maxHeight = null;
     }
   });
 });
@@ -55,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
     aiResponse.style.display = "block";
     aiResponse.innerHTML = "";
     
-    // Choose a matching AI-like answer
     let answer = "I'm not totally sure, but try rephrasing!";
 
     for (let key in cannedAnswers) {
@@ -64,11 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
       }
     }
-
-    // ✨ Typing animation ✨
     let i = 0;
     const speed = 25;
-
     function type() {
       if (i < answer.length) {
         aiResponse.innerHTML += answer.charAt(i);

@@ -17,7 +17,6 @@ a {
 body {
   font-family: "Open Sans", sans-serif;
   height: 100vh;
-  background-image: url("../images/home.mp4");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -133,4 +132,15 @@ header {
   width: 26px; 
   height: 26px;
   object-fit: contain;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
 }

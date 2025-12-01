@@ -1,18 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Animated counters
   const ingredientsSaved = document.getElementById("ingredientsSaved");
   const co2Saved = document.getElementById("co2Saved");
   const moneySaved = document.getElementById("moneySaved");
   const impactNumber = document.getElementById("impactNumber");
   const circle = document.querySelector(".progress-ring__circle");
 
-  // Mock data
   const stats = {
     ingredients: 32,
-    co2: 5.6, // kg
-    money: 12.45, // $
-    impact: 78 // %
+    co2: 5.6,
+    money: 12.45,
+    impact: 78
   };
 
   function animateNumber(element, end, suffix = "", duration = 1000) {
@@ -29,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
   animateNumber(co2Saved, stats.co2, " kg");
   animateNumber(moneySaved, stats.money, "$");
 
-  // Circular meter animation
   const radius = circle.r.baseVal.value;
   const circumference = 2 * Math.PI * radius;
   circle.style.strokeDasharray = `${circumference} ${circumference}`;
@@ -39,10 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const offset = circumference - (percent / 100) * circumference;
     circle.style.strokeDashoffset = offset;
 
-    // Change color depending on % 
-    if (percent <= 40) circle.style.stroke = "#f7b7a3"; // peach
-    else if (percent <= 70) circle.style.stroke = "#f1eaf0"; // lavender
-    else circle.style.stroke = "#6d1a36"; // burgundy
+    if (percent <= 40) circle.style.stroke = "#f7b7a3";
+    else if (percent <= 70) circle.style.stroke = "#f1eaf0";
+    else circle.style.stroke = "#6d1a36";
   }
 
   let current = 0;
@@ -53,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
     current++;
   }, 15);
 
-  // Dynamic tips
   const tips = [
     "Try to combine leftovers into soups or stir-fry dishes! 🥘",
     "Use up vegetables first to prevent spoilage! 🥦",
